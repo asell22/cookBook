@@ -1,3 +1,3 @@
 class Recipe < ActiveRecord::Base
-  validates :name, :ingredients, presence: true
+  validates :name, :ingredients, :procedure, presence: true
 end
