@@ -1,1 +1,28 @@
-
+<h2>New Recipe</h2>
+<%= form_for(@recipe) do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients %>
+  </p>
+  <p>
+    <%= f.label :procedure %>
+    <%= f.text_area :procedure %>
+  </p>
+  <p>
+    <%= f.label :servings %>
+    <%= select_tag(:servings, options_for_select([[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8]])) %>
+  </p>
+  <p>
+    <%= f.label :cooking_time %>
+    <%= select_tag(:cooking_time, options_for_select([["1-5 minutes", 1], ["5-10 minutes", 2], ["10-15 minutes", 3], ["15-20 minutes", 4], ["20-25 minutes", 5], ["25-30 minutes", 6], ["30-35 minutes", 7], ["35-40 minutes", 8], ["45-50 minutes", 9], ["50+ minutes", 10]])) %>
+  </p>
+  <p>
+    <%= f.label :level_of_difficulty %>
+    <%= select_tag(:level_of_difficulty, options_for_select([["Simple", 1], ["Easy", 2], ["Medium", 3], ["Challenging", 4]])) %>
+  </p>
+  <%= f.submit "Add Recipe"%>
+<% end %>
