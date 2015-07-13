@@ -1,5 +1,5 @@
 <h2>New Recipe</h2>
-<%= form_for(@recipe) do |f| %>
+<%= form_for @recipe, html: {class:"ui form"} do |f| %>
 
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
