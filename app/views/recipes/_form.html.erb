@@ -47,5 +47,5 @@
     </div>
   </div>
 
-  <%= f.submit "Add Recipe", class: "ui olive button"%>
+  <%= f.submit @recipe.new_record? ? "Add Recipe" : "Edit Recipe", class: "ui olive button"%>
 <% end %>
