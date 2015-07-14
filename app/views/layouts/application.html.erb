@@ -5,7 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <style src ="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.4/semantic.min.css"></style>
+
+  <style src ="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0/semantic.min.css"></style>
 </head>
 <body>
 
@@ -15,7 +16,11 @@
   </div>
 <% end %>
 
-<%= yield %>
+
+  <%= yield %>
+
+
+
 
 </body>
 </html>
