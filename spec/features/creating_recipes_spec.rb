@@ -56,4 +56,8 @@ feature "Creating Recipes" do
     expect(page).to have_content("Recipe has not been added")
     expect(page).to have_content("Procedure can't be blank")
   end
+
+  scenario "see select box for food preferences" do
+    expect(page).to have_content("Food Preferences")
+  end
 end
