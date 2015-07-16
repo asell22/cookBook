@@ -1,7 +1,24 @@
-<h2>Recipes</h2>
+<div class="ui inverted segment">
+  <div class="ui top fixed inverted menu">
+    <%= link_to "New Recipe", new_recipe_path, class:"item" %>
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Find a Recipe">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+    <a class="right menu item">Sign-in</a>
+  </div>
+</div>
+<h2 class="ui center aligned icon header">
+  <i class="food icon"></i>
+  <div class="content">
+    Recipes
+    <div class="sub header">Share your secret recipes</div>
+  </div>
+</h2>
 <ul>
   <% @recipes.each do |recipe| %>
     <li><%= link_to recipe.name, recipe %></li>
   <% end %>
 </ul>
-<%= link_to "New Recipe", new_recipe_path %>
