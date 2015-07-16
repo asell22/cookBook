@@ -19,16 +19,16 @@
         <%= f.label :name %>
         <%= f.text_field :name %>
       </div>
-      <div class="two wide field">
-        <%= f.label :servings %>
+      <div class="two wide field" id="servings">
+        <%= f.label :servings, "Servings" %>
         <%= f.select :servings, options_for_select([["select",""],[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8]]),{},  {class:'ui fluid search dropdown'} %>
       </div>
       <div class="two wide field">
-          <%= f.label :cooking_time %>
+          <%= f.label :cooking_time, "Cooking Time" %>
           <%= f.select :cooking_time, options_for_select([["select",""],["1-5 min.", 1], ["5-10 min.", 2], ["10-15 min.", 3], ["15-20 min.", 4], ["20-25 min.", 5], ["25-30 min.", 6], ["30-35 min.", 7], ["35-40 min.", 8], ["45-50 min.", 9], ["50+ minutes", 10]]), {}, {class: 'ui fluid search dropdown'}%>
       </div>
       <div class="two wide field">
-          <%= f.label :level_of_difficulty %>
+          <%= f.label :level_of_difficulty, "Level of Difficulty" %>
           <%= f.select :level_of_difficulty, options_for_select([["select", ""],["Simple", 1], ["Easy", 2], ["Medium", 3], ["Challenging", 4]]), {}, {class: 'ui fluid search dropdown'} %>
       </div>
     </div>
@@ -36,7 +36,7 @@
 
     <div class="fields">
       <div class="three wide field">
-          <%= f.label :food_preference %>
+          <%= f.label :food_preference, "Food Preferences" %>
           <%= f.select(:food_preference_id, options_from_collection_for_select(FoodPreference.all, :id, :name),{prompt: "select"}, class: "ui fluid search dropdown")  %>
         </div>
       <div class="three wide field">

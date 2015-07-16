@@ -10,10 +10,10 @@ feature "Creating Recipes" do
     fill_in "Name", with: "Bowl of Cereal"
     fill_in "Ingredients", with: "Milk Fruitloops"
     fill_in "Procedure", with: "Pour cereal into bowl, pour 3/4 cup of milk over it"
-    select 1, from: :servings
-    select "1-5 minutes", from: :cooking_time
-    select "Simple", from: :level_of_difficulty
 
+
+    select "1-5 min.", from: "Cooking Time"
+    select "Simple", from: "Level of Difficulty"
     click_button "Add Recipe"
 
     expect(page).to have_content("Recipe has been added")
@@ -23,9 +23,9 @@ feature "Creating Recipes" do
 
     fill_in "Ingredients", with: "Milk Fruitloops"
     fill_in "Procedure", with: "Pour cereal into bowl, pour 3/4 cup of milk over it"
-    select 1, from: :servings
-    select "1-5 minutes", from: :cooking_time
-    select "Simple", from: :level_of_difficulty
+    select 1, from: "Servings"
+    select "1-5 min.", from: "Cooking Time"
+    select "Simple", from: "Level of Difficulty"
 
     click_button "Add Recipe"
 
@@ -36,9 +36,9 @@ feature "Creating Recipes" do
   scenario "cannot create a recipe without listing ingredients" do
     fill_in "Name", with: "Bowl of Cereal"
     fill_in "Procedure", with: "Pour cereal into bowl, pour 3/4 cup of milk over it"
-    select 1, from: :servings
-    select "1-5 minutes", from: :cooking_time
-    select "Simple", from: :level_of_difficulty
+    select 1, from: "Servings"
+    select "1-5 min.", from: "Cooking Time"
+    select "Simple", from: "Level of Difficulty"
 
     click_button "Add Recipe"
     expect(page).to have_content("Recipe has not been added")
@@ -48,9 +48,9 @@ feature "Creating Recipes" do
   scenario "cannot create a recipe without a procedure" do
     fill_in "Name", with: "Bowl of Cereal"
     fill_in "Ingredients", with: "Milk Fruitloops"
-    select 1, from: :servings
-    select "1-5 minutes", from: :cooking_time
-    select "Simple", from: :level_of_difficulty
+    select 1, from: "Servings"
+    select "1-5 min.", from: "Cooking Time"
+    select "Simple", from: "Level of Difficulty"
 
     click_button "Add Recipe"
     expect(page).to have_content("Recipe has not been added")
