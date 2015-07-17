@@ -1,23 +1,23 @@
 <div class="ui inverted segment">
   <div class="ui top fixed inverted menu">
-    <div class="item">
-      <div class="ui icon input">
+    <!-- <div class="item"> -->
+      <!-- <div class="ui icon input">
         <input type="text" placeholder="Find a Recipe">
         <i class="search link icon"></i>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
     <a class="right menu item">Sign-in</a>
   </div>
 </div>
 
-<div class="ui divider"></div>
+<!-- <div class="ui divider"></div> -->
 <div class="ui three column vertically padded grid">
   <div class="column">
     <h2 class="ui center aligned icon header">
       <i class="book icon"></i>
       <div class="content">
         Cookbook
-        <div class="sub header"> <%= link_to "Add a recipe to our cookbook",  new_recipe_path %></div>
+        <div class="sub header"> <%= link_to "Add a recipe to our cookbook",  new_recipe_path, class: "new_recipe" %></div>
 
       </div>
     </h2>
@@ -43,6 +43,14 @@
     </h2>
   </div>
 </div>
+
+<div id="space">
+
+</div>
+
+
+
+
 
 
 
