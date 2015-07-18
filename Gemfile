@@ -30,7 +30,7 @@ gem 'autoprefixer-rails'
 gem 'json', '1.8.3'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+# gem 'client_side_validations'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
