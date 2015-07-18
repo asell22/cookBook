@@ -13,7 +13,17 @@
 
 <div class="ui container">
 
+
   <%= yield %>
+  <% flash.each do |key, value| %>
+    <div class="ui success message">
+      <i class="close icon"></i>
+      <div class="header">
+        Your recipe has been added!
+      </div>
+      <p>You may now see your recipe in our cookbook</p>
+    </div>
+  <% end %>
 
 </div>
 

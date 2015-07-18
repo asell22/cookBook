@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 
     if @recipe.save
       flash[:notice] = "Recipe has been added"
-      redirect_to @recipe
+      redirect_to root_path
     else
 
      render 'new'

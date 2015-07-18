@@ -4,7 +4,7 @@ $(document).ready(function() {
     $.get(window.location + '/recipes/new', function(data) {
       $('.raised.segment').removeClass('hide');
     }).then(function(data) {
-      $('#space').empty().html(data);
+      $('#space').html(data);
     });
   });
 
