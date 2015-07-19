@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem 'json', '1.8.3'
 # Use Unicorn as the app server
 # gem 'unicorn'
