@@ -12,17 +12,17 @@
   <h1 class="left aligned header">Sign Up</h1>
   <div class="five wide field">
     <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, id:"email" %>
   </div>
 
   <div class="five wide field">
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, id: "password" %>
   </div>
 
   <div class="five wide field">
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, id: "password_confirmation" %>
   </div>
 
   <%= f.submit "Sign up", class: "ui olive button" %>

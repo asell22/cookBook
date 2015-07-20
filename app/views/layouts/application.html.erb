@@ -10,24 +10,22 @@
 </head>
 <body>
 
-
-<div class="ui container">
-  <div>
-
-
   <%= yield %>
+
   <% flash.each do |key, value| %>
-    <div class="ui success message">
-      <i class="close icon"></i>
-      <div class="header">
-        Your recipe has been added!
+  <div class="ui three column centered grid">
+      <div class="column">
+        <div class="ui compact success message">
+          <i class="close icon"></i>
+          <div class="header">
+            <%= value %>
+          </div>
+        </div>
       </div>
-      <p>You may now see your recipe in our cookbook</p>
-    </div>
+
+
+
   <% end %>
-
-</div>
-
 
 </body>
 </html>

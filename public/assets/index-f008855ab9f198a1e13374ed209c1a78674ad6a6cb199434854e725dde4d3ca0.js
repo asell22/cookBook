@@ -8,13 +8,5 @@ $(document).ready(function() {
     });
   });
 
-  $('.show_all').on('click', function(event) {
-    console.log(event);
-    event.preventDefault();
-    $.get(window.location + '/all', function(data) {
-      $('.raised.segment').removeClass('hide');
-    }).then(function(data) {
-      $('#space').empty().html(data);
-    });
-  });
+  
 });
