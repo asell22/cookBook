@@ -6,6 +6,7 @@ Rails.application.routes.draw do
    root 'recipes#index'
    resources :recipes
    get '/all' => 'recipes#all', as: :all
+   get '/search' => 'recipes#search', as: :search
    get '/sign-up' => 'registrations#new', as: :signup
    post '/sign-up' => 'registrations#create'
    get '/sign-in' => 'authentication#new', as: :signin
