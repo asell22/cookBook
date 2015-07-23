@@ -3,13 +3,65 @@
   <%= text_field_tag(:search) %>
   <%= submit_tag "Search", class:"ui olive button" %>
 <% end %> -->
-<%= form_tag search_path, class: "ui small form" do |f| %>
-<h1 class="ui left aligned header">Search For Recipe</h1>
-
-  <div class="five wide field">
-    <%= text_field_tag(:search) %>
+<div class="ui three item menu">
+  <div class="ui dropdown item">
+    <!-- <i class="dropdown icon"></i> -->
+    Food Preferences
+    <div class="menu">
+      <%= link_to "Dairy Free", search_path(dairy_free: true), class: "preference item", id:"dairy" %>
+      <%= link_to "Vegan", search_path(vegan: true), class: "preference item", id: "vegan" %>
+      <%= link_to "Vegetarian", search_path(vegetarian: true), class: "preference item", id: "vegetarian" %>
+      <%= link_to "Meat", search_path(meat: true), class: "preference item", id: "meat"%>
+      <%= link_to "Other", search_path(preference_other: true), class: "preference item", id: "preference"%>
+    </div>
   </div>
-  <%= submit_tag "Search", class: "ui olive button" %>
+  <div class="ui dropdown item">
+    <!-- <i class="dropdown icon"></i> -->
+    Food Type
+    <div class="menu">
+      <%= link_to "Main Course", search_path(main_course: true), class: "type item", id:"main" %>
+      <%= link_to "Side Dish", search_path(side_dish: true), class: "type item", id: "side" %>
+      <%= link_to "Dessert", search_path(dessert: true), class: "type item", id: "dessert" %>
+      <%= link_to "Breakfast", search_path(breakfast: true), class: "type item", id: "breakfast"%>
+      <%= link_to "Beverage", search_path(beverage: true), class: "type item", id: "beverage"%>
+      <%= link_to "Other", search_path(type_other: true), class: "type item", id: "type"%>
+    </div>
+  </div>
+  <div class="ui dropdown item">
+    <!-- <i class="dropdown icon"></i> -->
+    Cuisine
+    <div class="menu">
+      <%= link_to "French", search_path(french: true), class: "cuisine item", id:"french" %>
+      <%= link_to "Italian", search_path(italian: true), class: "cuisine item", id: "italian" %>
+      <%= link_to "Chinese", search_path(chinese: true), class: "cuisine item", id: "chinese" %>
+      <%= link_to "Indian", search_path(indian: true), class: "cuisine item", id: "indian"%>
+      <%= link_to "Thai", search_path(thai: true), class: "cuisine item", id: "thai"%>
+      <%= link_to "Mexican", search_path(mexican: true), class: "cuisine item", id: "mexican"%>
+      <%= link_to "Japanese", search_path(japanese: true), class: "cuisine item", id: "japanese"%>
+      <%= link_to "Spanish", search_path(spanish: true), class: "cuisine item", id: "spanish"%>
+      <%= link_to "Greek", search_path(greek: true), class: "cuisine item", id: "greek"%>
+      <%= link_to "Lebanese", search_path(lebanese: true), class: "cuisine item", id: "lebanese"%>
+      <%= link_to "American", search_path(american: true), class: "cuisine item", id: "american"%>
+      <%= link_to "Other", search_path(cuisine_other: true), class: "cuisine item", id: "cuisine"%>
+    </div>
+  </div>
+</div>
 
+<%= form_tag(search_path, :method => "get", class: "ui small form") do %>
 
+<div class="five wide field">
+  <%= text_field_tag :search, params[:search], placeholder: "Search for Recipe"%>
+</div>
+<%= submit_tag "Search", :name => nil, class: "ui olive button search" %>
 <% end %>
+
+<div class="ui bottom segment">
+  <h3>Recipes</h3>
+  <% if @recipes.present? %>
+      <% @recipes.each do |recipe| %>
+        <%= link_to recipe.name, recipe %><br>
+      <% end %>
+  <% else %>
+    <p>There are no recipes containing the term(s) <%= params[:search] %></p>
+  <% end %>
+</div>

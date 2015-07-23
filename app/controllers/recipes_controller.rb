@@ -50,9 +50,17 @@ class RecipesController < ApplicationController
   end
 
   def search
-  end  
+    @recipes = Recipe.where(nil)
+    filtering_params(params).each do |key, value|
+      @recipes = @recipes.public_send(key, value) unless value.blank?
+    end
+   end
 
   private
+
+  def filtering_params(params)
+    params.slice(:search, :dairy_free, :vegan, :vegetarian, :meat, :preference_other, :main_course, :side_dish, :dessert, :breakfast, :beverage, :type_other, :french, :italian, :chinese, :indian, :thai, :mexican, :japanese, :spanish, :greek, :lebanese, :american, :cuisine_other)
+  end
 
   def set_recipe
     @recipe = Recipe.find(params[:id])

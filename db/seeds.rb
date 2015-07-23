@@ -10,4 +10,4 @@ FoodPreference.create([{name: 'Dairy Free'}, {name: 'Vegan'}, {name: 'Vegetarian
 
 FoodType.create([{name: 'Main Course'}, {name: 'Side Dish'}, {name: 'Dessert'}, {name: 'Breakfast'}, {name: 'Beverage'}, {name: 'Other'}])
 
- Cuisine.create([{name: 'French'}, {name: 'Italian'}, {name: 'Chinese'}, {name: 'Indian'}, {name: 'Thai'}, {name: 'Mexican'},{name: 'Japanese'}, {name: 'Spanish'}, {name: 'Greek'}, {name: 'Lebanese'}, {name: 'American'}, {name: 'Other'}])
+Cuisine.create([{name: 'French'}, {name: 'Italian'}, {name: 'Chinese'}, {name: 'Indian'}, {name: 'Thai'}, {name: 'Mexican'},{name: 'Japanese'}, {name: 'Spanish'}, {name: 'Greek'}, {name: 'Lebanese'}, {name: 'American'}, {name: 'Other'}])
