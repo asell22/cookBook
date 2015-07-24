@@ -1,11 +1,6 @@
 
-<!-- <%= form_tag("/search", method: "get", class: 'ui form') do %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag "Search", class:"ui olive button" %>
-<% end %> -->
 <div class="ui three item menu">
   <div class="ui dropdown item">
-    <!-- <i class="dropdown icon"></i> -->
     Food Preferences
     <div class="menu">
       <%= link_to "Dairy Free", search_path(dairyfree: true), class: "preference item", id:"dairyfree" %>
@@ -16,7 +11,6 @@
     </div>
   </div>
   <div class="ui dropdown item">
-    <!-- <i class="dropdown icon"></i> -->
     Food Type
     <div class="menu">
       <%= link_to "Main Course", search_path(maincourse: true), class: "type item", id:"maincourse" %>
@@ -28,7 +22,7 @@
     </div>
   </div>
   <div class="ui dropdown item">
-    <!-- <i class="dropdown icon"></i> -->
+  
     Cuisine
     <div class="menu">
       <%= link_to "French", search_path(french: true), class: "cuisine item", id:"french" %>
