@@ -59,7 +59,7 @@ class RecipesController < ApplicationController
   private
 
   def filtering_params(params)
-    params.slice(:search, :dairy_free, :vegan, :vegetarian, :meat, :preference_other, :main_course, :side_dish, :dessert, :breakfast, :beverage, :type_other, :french, :italian, :chinese, :indian, :thai, :mexican, :japanese, :spanish, :greek, :lebanese, :american, :cuisine_other)
+    params.slice(:search, :dairyfree, :vegan, :vegetarian, :meat, :preferenceother, :maincourse, :sidedish, :dessert, :breakfast, :beverage, :typeother, :french, :italian, :chinese, :indian, :thai, :mexican, :japanese, :spanish, :greek, :lebanese, :american, :cuisineother)
   end
 
   def set_recipe
