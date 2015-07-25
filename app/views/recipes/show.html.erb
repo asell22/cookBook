@@ -1,13 +1,61 @@
 
-<div class="ui four column grid">
+<!-- <div class="ui six column grid">
+  <div class="row"><h2> <%= @recipe.name %></h2></div>
   <div class="row">
-    <div class="column"> <h2> <%= @recipe.name %></h2> </div>
-    <div class="column"> <%= @recipe.food_preference.name %> </div>
-    <div class="column"> <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %> </div>
-    <div class="column"> <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: {confirm: "Are you sure you want to delete this recipe?"} %></div>
+    <div class="column"> <h4><%= @recipe.food_preference.name %> </h4> </div>
+    <div class="column"> <h4><%= @recipe.food_type.name %> </h4> </div>
+    <div class="column"> <h4><%= @recipe.cuisine.name %> </h4> </div>
+    <div class="column"> <h4><%= "#{@recipe.servings}    servings" %> </h4> </div>
+    <div class="column"> <h4><%= @recipe.cuisine.name %> </h4> </div>
+    <div class="column"> <h4><%= @recipe.cuisine.name %> </h4> </div>
+
   </div>
   <div class="column"></div>
   <div class="column"></div>
   <div class="column"></div>
   <div class="column"></div>
 </div>
+
+<div class="column"> <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %> </div>
+<div class="column"> <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: {confirm: "Are you sure you want to delete this recipe?"} %></div> -->
+<h2> <%= @recipe.name %></h2>
+<table class="ui basic table">
+  <thead>
+    <tr><th>Food Preference</th>
+    <th>Food Type</th>
+    <th>Cuisine</th>
+    <th>Servings</th>
+    <th>Cooking Time</th>
+    <th>Level of Difficulty</th>
+  </tr></thead>
+  <tbody>
+    <td> <%= @recipe.food_preference.name %> </td>
+    <td> <%= @recipe.food_type.name %></td>
+    <td> <%= @recipe.cuisine.name %></td>
+    <td> <%= @recipe.servings %></td>
+    <td> <%= @recipe.cooking_time %></td>
+    <td> <%= @recipe.level_of_difficulty %></td>
+  </tbody>
+</table>
+
+<table class="ui basic table">
+  <thead>
+    <tr><th>Ingredients</th><tr>
+  </thead>
+  <tbody>
+    <td>
+      <%= @recipe.ingredients %>
+    </td>
+  </tbody>
+</table>
+
+<table class="ui basic table">
+  <thead>
+    <tr><th>Procedure</th><tr>
+  </thead>
+  <tbody>
+    <td>
+      <%= @recipe.procedure %>
+    </td>
+  </tbody>
+</table>
