@@ -1,4 +1,13 @@
-<h2><%= @recipe.name %></h2>
-<%= @recipe.food_preference_id %>
-<%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
-<%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: {confirm: "Are you sure you want to delete this recipe?"} %>
+
+<div class="ui four column grid">
+  <div class="row">
+    <div class="column"> <h2> <%= @recipe.name %></h2> </div>
+    <div class="column"> <%= @recipe.food_preference.name %> </div>
+    <div class="column"> <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %> </div>
+    <div class="column"> <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data: {confirm: "Are you sure you want to delete this recipe?"} %></div>
+  </div>
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column"></div>
+  <div class="column"></div>
+</div>

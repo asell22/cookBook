@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="ui dropdown item">
-  
+
     Cuisine
     <div class="menu">
       <%= link_to "French", search_path(french: true), class: "cuisine item", id:"french" %>
@@ -50,7 +50,7 @@
 <% end %>
 
 <div class="ui bottom segment">
-  <h3>Recipes</h3>
+  <h3 class="title"></h3>
   <% if @recipes.present? %>
       <% @recipes.each do |recipe| %>
         <%= link_to recipe.name, recipe %><br>

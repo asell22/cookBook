@@ -8,15 +8,6 @@ $(document).ready(function() {
     });
   });
 
-  // $('.show_all').on('click', function(event) {
-  //   console.log(event);
-  //   event.preventDefault();
-  //   $.get(window.location + '/all', function(data) {
-  //     $('.raised.segment').removeClass('hide');
-  //   }).then(function(data) {
-  //     $('#space').empty().html(data);
-  //   });
-  // });
   $('.search').on('click', function(event) {
     event.preventDefault();
     $.get(window.location + '/search', function(data) {
@@ -42,12 +33,14 @@ $(document).ready(function() {
 
   $('.ui.dropdown.item').on('click', '.item', function(event) {
     event.preventDefault();
+    var title = this.text;
     var id = this.id;
-    
     $.get(window.location + '/search?' + id + '=true', function(data) {
       $('.raised.segment').removeClass('hide');
     }).then(function(data) {
       $('#space').empty().html(data)
+    }).then(function(data) {
+      $('.title').text(title + " Recipes")
     });
   });
 });
