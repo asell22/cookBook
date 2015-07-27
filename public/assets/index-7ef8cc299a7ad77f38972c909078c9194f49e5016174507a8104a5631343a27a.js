@@ -36,7 +36,7 @@ $(document).ready(function() {
     var title = this.text;
     var id = this.id;
     $.get(window.location + '/search?' + id + '=true', function(data) {
-      // $('.raised.segment').removeClass('hide');
+      $('.raised.segment').removeClass('hide');
     }).then(function(data) {
       $('#space').empty().html(data);
     }).then(function(data) {
@@ -47,9 +47,10 @@ $(document).ready(function() {
   $('.ui.bottom.segment').on('click', 'a.recipe', function(event){
     event.preventDefault();
     var showPath = this.href;
-    console.log(showPath);
     $.get(showPath, function(data) {
-      $('#space').empty().html(data);
+      $('.raised.segment').removeClass('hide');
+    }).then(function(data) {
+      $('.ui.bottom.segment').empty().html(data);
     });
   });
 });
