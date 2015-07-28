@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'recipes#index'
-   resources :recipes
+  root 'recipes#index'
+  resources :recipes do
+    resources :comments
+  end  
    get '/all' => 'recipes#all', as: :all
    get '/search' => 'recipes#search', as: :search
    get '/sign-up' => 'registrations#new', as: :signup

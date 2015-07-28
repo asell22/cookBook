@@ -22,6 +22,8 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comment.recipe_id = @recipe.id
   end
 
   def edit

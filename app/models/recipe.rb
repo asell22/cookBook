@@ -2,6 +2,7 @@ class Recipe < ActiveRecord::Base
   belongs_to :cuisine
   belongs_to :food_preference
   belongs_to :food_type
+  has_many :comments
 
   scope :dairyfree, -> (dairyfree){where food_preference_id: 1}
   scope :vegan, -> (vegan){where food_preference_id: 2 }

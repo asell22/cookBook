@@ -44,4 +44,8 @@
 </div>
 <div class="ui bottom segment">
   <h3>Comments</h3>
+  <%= render partial: 'recipes/comment', collection: @recipe.comments %>
+</div>
+<div class="ui bottom segment">
+  <%= render partial: 'comments/form' %>
 </div>
