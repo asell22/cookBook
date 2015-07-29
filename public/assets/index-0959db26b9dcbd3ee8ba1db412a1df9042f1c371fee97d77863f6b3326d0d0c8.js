@@ -1,41 +1,18 @@
-var newRoute = window.location + '/recipes/new'
-var searchRoute = window.location + '/search'
-
 $(document).ready(function() {
   $('.new_recipe').on('click', function(event){
-    event.preventDefault()
-    // $('#space').load(newRoute, function () {
-    //   $('.raised.segment').removeClass('hide');
-    // });
-    $.ajax(
-      {
-        url: window.location + '/recipes/new',
-        success: function(data) {
-          $('#space').html(data)
-        }
-      }
-    ).done(function(){
+    event.preventDefault();
+    $.get(window.location + '/recipes/new', function(data) {
       $('.raised.segment').removeClass('hide');
+    }).then(function(data) {
+      $('#space').empty().html(data);
     });
-
-    // $.get(window.location + '/recipes/new', function(data) {
-    //   $('.raised.segment').removeClass('hide');
-    // }).done(function(data) {
-    //   $('#space').empty().html(data);
-    // });
   });
 
   $('.search').on('click', function(event) {
     event.preventDefault();
-    // $('#space').empty().load(searchRoute, function() {
-    //   $('.raised.segment').removeClass('hide');
-    //   $('.ui.bottom.segment').addClass('hide');
-    // });
-
-
     $.get(window.location + '/search', function(data) {
       $('.raised.segment').removeClass('hide');
-    }).done(function(data) {
+    }).then(function(data) {
       $('#space').empty().html(data);
       $('.ui.bottom.segment').addClass('hide');
     });
@@ -47,7 +24,7 @@ $(document).ready(function() {
     console.log(input);
     $.get(window.location + '/search?utf8=✓&search=' + input, function(data) {
       $('.raised.segment').removeClass('hide');
-    }).done(function(data) {
+    }).then(function(data) {
       $('#space').empty().html(data)
     }).then(function(){
       $('.ui.bottom.segment').removeClass('hide');
@@ -61,7 +38,7 @@ $(document).ready(function() {
     console.log('clicked');
     $.get(window.location + '/search?' + id + '=true', function(data) {
       // $('.raised.segment').removeClass('hide');
-    }).done(function(data) {
+    }).then(function(data) {
       $('#space').empty().html(data);
     }).then(function(data) {
       $('.title').text(title + " Recipes")
