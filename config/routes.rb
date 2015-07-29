@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :comments
   end  
-   get '/all' => 'recipes#all', as: :all
    get '/search' => 'recipes#search', as: :search
    get '/sign-up' => 'registrations#new', as: :signup
    post '/sign-up' => 'registrations#create'

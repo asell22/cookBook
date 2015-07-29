@@ -54,6 +54,8 @@ $(document).ready(function() {
     });
   });
 
+
+
   // $('.new_comment').on('submit', function(event) {
   //   event.preventDefault();
   //   var input = $('.comment-body').val();
