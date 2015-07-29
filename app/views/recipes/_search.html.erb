@@ -1,5 +1,5 @@
 <div class="ui three item menu">
-  <div class="ui dropdown item">
+  <div class="search-dropdown ui dropdown item">
     Food Preferences
     <div class="menu">
       <%= link_to "Dairy Free", search_path(dairyfree: true), class: "preference item", id:"dairyfree" %>
@@ -9,7 +9,7 @@
       <%= link_to "Other", search_path(preferenceother: true), class: "preference item", id: "preferenceother"%>
     </div>
   </div>
-  <div class="ui dropdown item">
+  <div class="search-dropdown ui dropdown item ">
     Food Type
     <div class="menu">
       <%= link_to "Main Course", search_path(maincourse: true), class: "type item", id:"maincourse" %>
@@ -20,7 +20,7 @@
       <%= link_to "Other", search_path(typeother: true), class: "type item", id: "typeother"%>
     </div>
   </div>
-  <div class="ui dropdown item">
+  <div class="search-dropdown ui dropdown item ">
 
     Cuisine
     <div class="menu">

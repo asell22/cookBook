@@ -31,10 +31,11 @@ $(document).ready(function() {
     });
   })
 
-  $('.ui.dropdown.item').on('click', '.item', function(event) {
+  $('.search-dropdown').on('click', '.item', function(event) {
     event.preventDefault();
     var title = this.text;
     var id = this.id;
+    console.log('clicked');
     $.get(window.location + '/search?' + id + '=true', function(data) {
       // $('.raised.segment').removeClass('hide');
     }).then(function(data) {
@@ -52,4 +53,10 @@ $(document).ready(function() {
       $('#space').empty().html(data);
     });
   });
+
+  // $('.new_comment').on('submit', function(event) {
+  //   event.preventDefault();
+  //   var input = $('.comment-body').val();
+  //   console.log(input);
+  // });
 });

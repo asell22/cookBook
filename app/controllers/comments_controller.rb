@@ -3,9 +3,12 @@ class CommentsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.build(comment_params)
     @comment.user = current_user
-    @comment.save
-    redirect_to recipe_path(@recipe)
+    if @comment.save
+      flash[:notice] = "You have posted a comment!"
+      redirect_to root_path
+    end
   end
+
 
   private
 

@@ -13,18 +13,14 @@
   <%= yield %>
 
   <% flash.each do |key, value| %>
-  <div class="ui three column centered grid">
-      <div class="column">
-        <div class="ui compact success message">
-          <i class="close icon"></i>
-          <div class="header">
-            <%= value %>
-          </div>
+    <div class="ui container">
+      <div class="ui success message">
+        <i class="close icon"></i>
+        <div class="header">
+        <%= value %>
         </div>
       </div>
-
-
-
+    </div>
   <% end %>
 
 </body>

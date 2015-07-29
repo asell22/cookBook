@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      flash[:notice] = "Recipe has been added"
+      flash[:notice] = "Your recipe has been added to our cookbook!"
       redirect_to root_path
     else
 
