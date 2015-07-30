@@ -1,5 +1,8 @@
 var newRoute = window.location + '/recipes/new'
 var searchRoute = window.location + '/search'
+$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+  options.async = true;
+});
 
 $(document).ready(function() {
   $('.new_recipe').on('click', function(event){
@@ -9,9 +12,9 @@ $(document).ready(function() {
     // });
     $.ajax(
       {
-        url: window.location + '/recipes/new',
+        url: newRoute,
         success: function(data) {
-          $('#space').html(data)
+          $('#space').empty().html(data);
         }
       }
     ).done(function(){
@@ -31,14 +34,25 @@ $(document).ready(function() {
     //   $('.raised.segment').removeClass('hide');
     //   $('.ui.bottom.segment').addClass('hide');
     // });
-
-
-    $.get(window.location + '/search', function(data) {
-      $('.raised.segment').removeClass('hide');
-    }).done(function(data) {
-      $('#space').empty().html(data);
+    $.ajax(
+      {
+        url: searchRoute,
+        success: function(data) {
+          $('#space').empty().html(data);
+        }
+      }
+    ).done(function() {
       $('.ui.bottom.segment').addClass('hide');
+      $('.raised.segment').removeClass('hide');
     });
+
+
+    // $.get(window.location + '/search', function(data) {
+    //   $('.raised.segment').removeClass('hide');
+    // }).done(function(data) {
+    //   $('#space').empty().html(data);
+    //   $('.ui.bottom.segment').addClass('hide');
+    // });
   });
 
   $('.search-form').submit(function(event) {
