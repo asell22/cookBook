@@ -1,8 +1,6 @@
 var newRoute = window.location + '/recipes/new'
 var searchRoute = window.location + '/search'
-$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
-  options.async = true;
-});
+
 
 $(document).ready(function() {
   $('.new_recipe').on('click', function(event){
