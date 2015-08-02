@@ -2,13 +2,16 @@
 
 <%= form_for @user, url: signup_path, html: {class: 'ui small form'} do |f| %>
 
-  <!-- <% if @user.errors.present? %>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %> -->
+  <% if @user.errors.present? %>
+    <div class="ui negative message">
+      <i class="close icon"></i>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  </div>
+  <% end %>
   <h1 class="left aligned header">Sign Up</h1>
 
   <div class="five wide field">
@@ -18,7 +21,7 @@
 
   <div class="five wide field">
     <%= f.label :user_name %>
-    <%= f.text_field :user_name %>
+    <%= f.text_field :user_name, id:"username" %>
   </div>
 
   <div class="five wide field">
