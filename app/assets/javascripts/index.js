@@ -1,7 +1,7 @@
 var newRoute = window.location + '/recipes/new'
 var searchRoute = window.location + '/search'
 
-
+$.ajaxSetup({async:true})
 $(document).ready(function() {
   $('.new_recipe').on('click', function(event){
     event.preventDefault()
@@ -14,13 +14,13 @@ $(document).ready(function() {
         }
       }
     ).done(function(){
-      $('.raised.segment').removeClass('hide');
+      // $('.raised.segment').removeClass('hide');
     });
   });
 
   $('.search').on('click', function(event) {
     event.preventDefault();
-
+    $('.raised.segment').removeClass('hide');
     $.ajax(
       {
         url: searchRoute,
@@ -31,7 +31,7 @@ $(document).ready(function() {
       }
     ).done(function() {
       $('.ui.bottom.segment').addClass('hide');
-      $('.raised.segment').removeClass('hide');
+
     });
 
 
