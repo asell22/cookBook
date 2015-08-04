@@ -5,12 +5,10 @@ var searchRoute = window.location + '/search'
 $(document).ready(function() {
   $('.new_recipe').on('click', function(event){
     event.preventDefault()
-    // $('#space').load(newRoute, function () {
-    //   $('.raised.segment').removeClass('hide');
-    // });
     $.ajax(
       {
         url: newRoute,
+        async: true,
         success: function(data) {
           $('#space').empty().html(data);
         }
@@ -18,23 +16,15 @@ $(document).ready(function() {
     ).done(function(){
       $('.raised.segment').removeClass('hide');
     });
-
-    // $.get(window.location + '/recipes/new', function(data) {
-    //   $('.raised.segment').removeClass('hide');
-    // }).done(function(data) {
-    //   $('#space').empty().html(data);
-    // });
   });
 
   $('.search').on('click', function(event) {
     event.preventDefault();
-    // $('#space').empty().load(searchRoute, function() {
-    //   $('.raised.segment').removeClass('hide');
-    //   $('.ui.bottom.segment').addClass('hide');
-    // });
+
     $.ajax(
       {
         url: searchRoute,
+        async: true,
         success: function(data) {
           $('#space').empty().html(data);
         }
